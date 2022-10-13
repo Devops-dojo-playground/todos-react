@@ -3,6 +3,8 @@ import React from 'react'
 let footerStyle = {
 
   bottom: "0%",
+  position: "relative",
+  marginTop: "70vh",
   width: "100%",
 }
 

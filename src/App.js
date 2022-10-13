@@ -4,6 +4,15 @@ import { AddTodo } from './MyComponents/AddTodo';
 import {Footer} from './MyComponents/Footer';
 import {Header} from './MyComponents/Header';
 import {Todos} from './MyComponents/Todos';
+import {About} from './MyComponents/About';
+import {Contact} from './MyComponents/Contact';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+
+
 
 function App() {
   let initTodo;
@@ -14,7 +23,6 @@ function App() {
   }
 
   const onDelete = (todo) => {
-    console.log("OnDelete pressed of ", todo);
     setTodo(
       todos.filter((e) => {
         return e !== todo;
@@ -24,7 +32,6 @@ function App() {
   };
 
   const addTodo = (title, description) => {
-    console.log("Adding this todo", title, description);
     let sno;
     if (todos.length === 0) {
       sno = 0;
@@ -49,12 +56,17 @@ function App() {
 
   return (
     <>
-      <Header title="Todo App" searchBar={true} />
-      <AddTodo addTodo={addTodo} />
-      <Todos todos={todos} onDelete={onDelete} />
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<><AddTodo addTodo={addTodo} /><Todos todos={todos} onDelete={onDelete} /></>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
       
       <Footer/>
-    </>
+    </>  
   );
 }
 

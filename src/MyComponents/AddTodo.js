@@ -10,10 +10,12 @@ export const AddTodo = (props) => {
             alert("Title or description cannot be empty.")
         } else {
             props.addTodo(title, description)
+            setTitle("")
+            setDescription("")
         }
     }
     return (
-        <div className='container md-4 col-sm-4 my-3'>
+        <div className='container col-md-6 col-sm-6 my-3'>
             <form onSubmit={submit}>
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">Title</label>
