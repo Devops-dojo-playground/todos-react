@@ -1,3 +1,7 @@
+# About this TODO
+
+This todo react app is designed to add, delete and display todos.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
